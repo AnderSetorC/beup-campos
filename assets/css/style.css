@@ -199,11 +199,11 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   letter-spacing: 0.05em;
 }
 .brand-text .sub {
-  font-size: 9px;
-  letter-spacing: 0.2em;
+  font-size: 10px;
+  letter-spacing: 0.1em;
   color: var(--verde);
-  font-weight: 600;
-  margin-top: 2px;
+  font-weight: 800;
+  margin-top: 4px;
 }
 .site-header .btn-whats { padding: 12px 20px; font-size: 14px; }
 
@@ -1295,6 +1295,7 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
 /* ============== RESPONSIVO ============== */
 @media (max-width: 900px) {
   .hero { padding: 110px 24px 60px; min-height: auto; }
+  .site-header .brand-text .sub { font-size: 8px; letter-spacing: 0.04em; }
   .hero-content { grid-template-columns: 1fr; gap: 40px; }
   .hero-card { transform: none; max-width: 420px; margin: 0 auto; }
   .hero-stats { grid-template-columns: 1fr; }
@@ -1313,6 +1314,13 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   .container { padding: 0 20px; }
 }
 @media (max-width: 480px) {
+  .site-header { padding-left: 14px; padding-right: 14px; }
+  .site-header .brand { gap: 8px; }
+  .site-header .brand-logo { width: 38px; height: 38px; }
+  .site-header .brand-text .name { font-size: 15px; }
+  .site-header .brand-text .sub { max-width: 170px; font-size: 7px; }
+  .site-header .btn-whats { padding: 10px 14px; }
+  .site-header .header-cta-text { display: none; }
   .hero-text h1 { font-size: 38px; }
   .hero-card-counter .num { font-size: 44px; }
   .trust-strip-grid { grid-template-columns: 1fr; }
