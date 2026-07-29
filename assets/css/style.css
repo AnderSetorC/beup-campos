@@ -141,6 +141,13 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
 }
 .btn-outline:hover { background: var(--creme); color: var(--roxo-escuro); }
 
+.btn-outline-dark {
+  background: transparent;
+  color: var(--roxo-escuro);
+  border: 2px solid var(--roxo-escuro);
+}
+.btn-outline-dark:hover { background: var(--roxo-escuro); color: var(--amarelo); }
+
 .btn-ghost {
   background: transparent;
   color: var(--roxo);
@@ -160,6 +167,7 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   background: rgba(250, 246, 236, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -170,6 +178,30 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   padding: 10px 24px;
   background: rgba(250, 246, 236, 0.95);
   box-shadow: 0 4px 24px rgba(15, 30, 15, 0.06);
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--roxo-escuro);
+  background: transparent;
+  border: 2px solid var(--linha);
+  transition: all 0.2s;
+}
+.social-link svg { width: 18px; height: 18px; }
+.social-link:hover {
+  background: var(--roxo-escuro);
+  color: var(--amarelo);
+  border-color: var(--roxo-escuro);
+  transform: translateY(-2px);
 }
 .brand {
   display: flex;
@@ -1309,6 +1341,213 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
+/* ============== FALE COM CLEBER (CORRETOR) ============== */
+.corretor .section-header { margin-bottom: 48px; }
+
+.corretor-card {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 28px;
+  padding: 48px;
+  box-shadow: 0 24px 72px rgba(15, 30, 15, 0.14);
+  border: 3px solid var(--amarelo);
+  position: relative;
+}
+
+.corretor-photo-wrap {
+  position: relative;
+  width: 100%;
+}
+.corretor-photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 6px solid var(--verde);
+  box-shadow: 0 16px 48px rgba(14, 92, 58, 0.25);
+  background: linear-gradient(135deg, var(--creme) 0%, var(--papel) 100%);
+  position: relative;
+}
+.corretor-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s;
+}
+.corretor-photo-frame:hover img { transform: scale(1.04); }
+
+.corretor-creci-badge {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--amarelo);
+  color: var(--roxo-escuro);
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  box-shadow: 0 6px 18px rgba(232, 180, 23, 0.45);
+  white-space: nowrap;
+}
+
+.corretor-info { padding: 8px 0; }
+.corretor-tag {
+  display: inline-block;
+  background: var(--verde);
+  color: var(--amarelo);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.corretor-info h3 {
+  font-size: clamp(28px, 3.5vw, 42px);
+  color: var(--roxo-escuro);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.corretor-bio {
+  font-size: 17px;
+  color: var(--tinta-suave);
+  margin-bottom: 24px;
+  max-width: 540px;
+  line-height: 1.6;
+}
+.corretor-diferenciais {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+  margin-bottom: 32px;
+}
+.corretor-diferenciais li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tinta);
+}
+.corretor-diferenciais .check {
+  width: 22px;
+  height: 22px;
+  background: var(--verde);
+  color: var(--amarelo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.corretor-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.corretor-redes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid var(--linha);
+}
+.rede-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--creme);
+  border: 1.5px solid var(--linha);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--roxo-escuro);
+  transition: all 0.2s;
+}
+.rede-pill:hover {
+  background: var(--roxo-escuro);
+  color: var(--amarelo);
+  border-color: var(--roxo-escuro);
+  transform: translateY(-2px);
+}
+
+/* ============== VÍDEO YOUTUBE ============== */
+.video .section-header h2 em { color: var(--amarelo); }
+.video-frame {
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 4px solid var(--amarelo);
+  box-shadow: 0 24px 72px rgba(0, 0, 0, 0.45);
+  background: #000;
+  position: relative;
+}
+.video-16x9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: #000;
+}
+.video-16x9 iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.video-cta {
+  max-width: 720px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+.video-cta p {
+  font-size: 17px;
+  color: rgba(250, 246, 236, 0.85);
+  margin-bottom: 20px;
+}
+
+/* ============== FOOTER SOCIAL ============== */
+.footer-social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(250, 246, 236, 0.7);
+  font-size: 14px;
+  transition: color 0.2s, transform 0.2s;
+}
+.footer-social-link svg { flex-shrink: 0; }
+.footer-social-link:hover {
+  color: var(--amarelo);
+  transform: translateX(3px);
+}
+
 /* ============== RESPONSIVO ============== */
 @media (max-width: 900px) {
   .hero { padding: 110px 24px 60px; min-height: auto; }
@@ -1329,6 +1568,24 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   .simulador .form-row { grid-template-columns: 1fr; }
   .simulador select { font-size: 15px; }
   .container { padding: 0 20px; }
+
+  /* Corretor + vídeo */
+  .corretor-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 24px;
+  }
+  .corretor-photo-wrap { max-width: 320px; margin: 0 auto; }
+  .corretor-photo-frame { aspect-ratio: 4 / 5; }
+  .corretor-info { text-align: center; }
+  .corretor-tag { margin-left: auto; margin-right: auto; }
+  .corretor-bio { margin-left: auto; margin-right: auto; }
+  .corretor-diferenciais { grid-template-columns: 1fr; text-align: left; max-width: 320px; margin-left: auto; margin-right: auto; }
+  .corretor-ctas { justify-content: center; }
+  .corretor-ctas .btn { width: 100%; }
+  .corretor-redes { justify-content: center; }
+  .video-frame { border-width: 3px; }
+  .header-actions .social-link { width: 36px; height: 36px; }
 }
 @media (max-width: 480px) {
   .site-header { padding-left: 14px; padding-right: 14px; }
@@ -1338,6 +1595,9 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   .site-header .brand-text .sub { max-width: 170px; font-size: 7px; }
   .site-header .btn-whats { padding: 10px 14px; }
   .site-header .header-cta-text { display: none; }
+  .header-actions { gap: 6px; }
+  .header-actions .social-link { width: 34px; height: 34px; }
+  .header-actions .social-link svg { width: 16px; height: 16px; }
   .hero-text h1 { font-size: 38px; }
   .hero-card-counter .num { font-size: 44px; }
   .trust-strip-grid { grid-template-columns: 1fr; }
@@ -1346,6 +1606,13 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   .stat-big:last-child { border-bottom: none; }
   .cta-final .btn-lg { width: 100%; }
   .urgency-bar { font-size: 12px; padding: 12px 16px; }
+
+  /* Corretor */
+  .corretor-card { padding: 24px 16px; border-width: 2px; }
+  .corretor-photo-wrap { max-width: 260px; }
+  .corretor-info h3 { font-size: 26px; }
+  .corretor-bio { font-size: 15px; }
+  .corretor-redes .rede-pill { font-size: 12px; padding: 8px 12px; }
 }
 
 /* REDUZIDO motion */
