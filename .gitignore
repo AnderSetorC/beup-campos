@@ -10,6 +10,9 @@ Thumbs.db
 .idea/
 *.swp
 
+# Claude Code (metadata da sessão, local)
+.claude/
+
 # Node (caso adicione build depois)
 node_modules/
 .vercel/

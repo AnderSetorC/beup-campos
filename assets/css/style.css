@@ -34,7 +34,10 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  max-width: 100vw;
 }
+
+html { overflow-x: hidden; max-width: 100vw; }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -1346,29 +1349,32 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
 
 .corretor-card {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 56px;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 48px;
   align-items: center;
   max-width: 1080px;
   margin: 0 auto;
   background: white;
   border-radius: 28px;
-  padding: 48px;
+  padding: 40px;
   box-shadow: 0 24px 72px rgba(15, 30, 15, 0.14);
   border: 3px solid var(--amarelo);
   position: relative;
+  overflow: hidden;
 }
 
 .corretor-photo-wrap {
   position: relative;
   width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
 }
 .corretor-photo-frame {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: 24px;
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
   overflow: hidden;
-  border: 6px solid var(--verde);
+  border: 5px solid var(--verde);
   box-shadow: 0 16px 48px rgba(14, 92, 58, 0.25);
   background: linear-gradient(135deg, var(--creme) 0%, var(--papel) 100%);
   position: relative;
@@ -1377,7 +1383,7 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 22%;
   display: block;
   transition: transform 0.4s;
 }
@@ -1385,22 +1391,23 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
 
 .corretor-creci-badge {
   position: absolute;
-  bottom: -16px;
+  bottom: -14px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--amarelo);
   color: var(--roxo-escuro);
-  padding: 8px 18px;
+  padding: 7px 16px;
   border-radius: 100px;
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   box-shadow: 0 6px 18px rgba(232, 180, 23, 0.45);
   white-space: nowrap;
+  z-index: 2;
 }
 
-.corretor-info { padding: 8px 0; }
+.corretor-info { padding: 8px 0; min-width: 0; }
 .corretor-tag {
   display: inline-block;
   background: var(--verde);
@@ -1415,24 +1422,25 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   margin-bottom: 16px;
 }
 .corretor-info h3 {
-  font-size: clamp(28px, 3.5vw, 42px);
+  font-size: clamp(26px, 3.2vw, 40px);
   color: var(--roxo-escuro);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 .corretor-bio {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--tinta-suave);
   margin-bottom: 24px;
   max-width: 540px;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 .corretor-diferenciais {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px 18px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 .corretor-diferenciais li {
   display: flex;
@@ -1461,6 +1469,7 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
+.corretor-ctas .btn { min-width: 0; }
 .corretor-redes {
   display: flex;
   gap: 10px;
@@ -1480,6 +1489,7 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   font-weight: 600;
   color: var(--roxo-escuro);
   transition: all 0.2s;
+  white-space: nowrap;
 }
 .rede-pill:hover {
   background: var(--roxo-escuro);
@@ -1493,7 +1503,7 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
 .video-frame {
   max-width: 980px;
   margin: 0 auto;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
   border: 4px solid var(--amarelo);
   box-shadow: 0 24px 72px rgba(0, 0, 0, 0.45);
@@ -1568,24 +1578,76 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   .simulador .form-row { grid-template-columns: 1fr; }
   .simulador select { font-size: 15px; }
   .container { padding: 0 20px; }
-
-  /* Corretor + vídeo */
-  .corretor-card {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 32px 24px;
-  }
-  .corretor-photo-wrap { max-width: 320px; margin: 0 auto; }
-  .corretor-photo-frame { aspect-ratio: 4 / 5; }
-  .corretor-info { text-align: center; }
-  .corretor-tag { margin-left: auto; margin-right: auto; }
-  .corretor-bio { margin-left: auto; margin-right: auto; }
-  .corretor-diferenciais { grid-template-columns: 1fr; text-align: left; max-width: 320px; margin-left: auto; margin-right: auto; }
-  .corretor-ctas { justify-content: center; }
-  .corretor-ctas .btn { width: 100%; }
-  .corretor-redes { justify-content: center; }
-  .video-frame { border-width: 3px; }
   .header-actions .social-link { width: 36px; height: 36px; }
+
+  /* ===== Botões no mobile: permitem wrap do texto ===== */
+  .btn { white-space: normal; }
+
+  /* ===== Corretor (≤900px) ===== */
+  .corretor .section-header { margin-bottom: 32px; }
+  .corretor-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 28px 24px;
+    border-radius: 22px;
+    border-width: 2px;
+  }
+  .corretor-photo-wrap {
+    max-width: 280px;
+    margin: 0 auto 8px;
+  }
+  .corretor-photo-frame {
+    border-width: 4px;
+    border-radius: 18px;
+  }
+  .corretor-creci-badge { bottom: -12px; font-size: 11px; padding: 6px 14px; }
+
+  /* Texto volta a alinhar à esquerda no tablet/mobile (evita cortes) */
+  .corretor-info { text-align: left; padding: 0; }
+  .corretor-tag { display: inline-block; }
+  .corretor-info h3 { margin-bottom: 12px; }
+  .corretor-bio { font-size: 15px; margin-bottom: 20px; max-width: none; }
+  .corretor-diferenciais {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  .corretor-diferenciais li { font-size: 14px; }
+  .corretor-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .corretor-ctas .btn {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+  .corretor-ctas .btn svg { width: 18px; height: 18px; }
+  .corretor-redes { justify-content: flex-start; }
+
+  /* ===== Vídeo (≤900px) ===== */
+  .video-frame {
+    border-width: 3px;
+    border-radius: 16px;
+  }
+}
+@media (max-width: 640px) {
+  /* ===== Corretor + vídeo (telas pequenas) ===== */
+  .corretor-card { padding: 22px 16px; }
+  .corretor-photo-wrap { max-width: 220px; }
+  .corretor-creci-badge { font-size: 10px; padding: 5px 12px; letter-spacing: 0.06em; }
+  .corretor-info h3 { font-size: 24px; }
+  .corretor-bio { font-size: 14px; line-height: 1.5; }
+  .corretor-ctas .btn { padding: 14px 16px; font-size: 14px; }
+  .corretor-redes .rede-pill {
+    font-size: 12px;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+  .video-cta p { font-size: 15px; }
+  .video-cta .btn-lg { padding: 16px 22px; font-size: 16px; width: 100%; }
 }
 @media (max-width: 480px) {
   .site-header { padding-left: 14px; padding-right: 14px; }
@@ -1598,21 +1660,87 @@ h3 { font-size: clamp(22px, 2.5vw, 32px); }
   .header-actions { gap: 6px; }
   .header-actions .social-link { width: 34px; height: 34px; }
   .header-actions .social-link svg { width: 16px; height: 16px; }
-  .hero-text h1 { font-size: 38px; }
+  .hero-text h1 { font-size: 36px; line-height: 1.1; }
+  .hero-text .linha { display: inline; }
+  .hero-text .destaque { padding: 0 8px; font-size: 0.95em; }
+  .hero-sub { font-size: 16px; }
   .hero-card-counter .num { font-size: 44px; }
   .trust-strip-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: 1fr; }
-  .stat-big { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .stats-grid { grid-template-columns: 1fr; gap: 16px; }
+  .stat-big { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 16px; }
   .stat-big:last-child { border-bottom: none; }
+  .stat-big .num { font-size: 44px; }
   .cta-final .btn-lg { width: 100%; }
   .urgency-bar { font-size: 12px; padding: 12px 16px; }
 
-  /* Corretor */
-  .corretor-card { padding: 24px 16px; border-width: 2px; }
-  .corretor-photo-wrap { max-width: 260px; }
-  .corretor-info h3 { font-size: 26px; }
-  .corretor-bio { font-size: 15px; }
-  .corretor-redes .rede-pill { font-size: 12px; padding: 8px 12px; }
+  /* Localização destaque — fonte menor pra caber em telas estreitas */
+  .location-highlight { padding: 80px 16px 16px; }
+  .location-highlight span { font-size: clamp(22px, 8vw, 36px); line-height: 1.05; }
+
+  /* Amenidades — 2 colunas em vez de grid auto-fit largo */
+  .amenities-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .amenity-card { padding: 18px 12px; }
+  .amenity-card .ico { width: 44px; height: 44px; font-size: 22px; margin-bottom: 10px; }
+  .amenity-card h3 { font-size: 14px; }
+  .amenity-card p { font-size: 12px; }
+
+  /* Carrossel — controles menores */
+  .carousel { border-radius: 16px; }
+  .carousel-content { padding: 16px 18px; }
+  .carousel-content h3 { font-size: 22px; }
+  .carousel-content p { font-size: 14px; }
+
+  /* Hero card — não rotaciona */
+  .hero-card { max-width: 100%; }
+
+  /* CTA final */
+  .cta-final { padding: 64px 20px; }
+  .cta-final h2 { font-size: clamp(28px, 7vw, 40px); }
+
+  /* Simulador */
+  .simulador { padding: 24px 18px; }
+  .simulador h3 { font-size: 22px; }
+  .simulador-result .parcela { font-size: 42px; }
+
+  /* Footer */
+  .footer-grid { gap: 28px; }
+  .site-footer { padding: 48px 20px 20px; }
+  .footer-grid h4 { font-size: 13px; }
+
+  /* Corretor em tela bem pequena */
+  .corretor-card { padding: 20px 14px; border-radius: 18px; }
+  .corretor-photo-wrap { max-width: 200px; }
+  .corretor-photo-frame { border-width: 3px; }
+  .corretor-info h3 { font-size: 22px; }
+  .corretor-bio { font-size: 13.5px; }
+  .container { padding: 0 14px; }
+
+  /* Headings de seção: garante que cabem */
+  .section-header h2 { font-size: clamp(24px, 7vw, 38px); word-wrap: break-word; overflow-wrap: anywhere; }
+  .section-header p { font-size: 14px; }
+  h1 { font-size: clamp(32px, 8vw, 44px); }
+  h2 { font-size: clamp(24px, 7vw, 38px); }
+  h3 { font-size: clamp(18px, 4.5vw, 26px); }
+  .eyebrow { font-size: 11px; padding: 6px 12px; }
+
+  /* Stats com largura controlada */
+  .stat-big .num { font-size: 40px; word-break: break-word; }
+}
+@media (max-width: 380px) {
+  /* Telas muito pequenas (iPhone SE 1ª geração etc) */
+  .container { padding: 0 12px; }
+  .site-header { padding-left: 12px; padding-right: 12px; }
+  .hero-text h1 { font-size: 32px; }
+  .hero-eyebrow { font-size: 10px; padding: 6px 12px; }
+  .location-highlight span { font-size: 26px; }
+  .amenities-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .amenity-card { padding: 14px 10px; }
+  .amenity-card .ico { width: 38px; height: 38px; font-size: 18px; }
+  .amenity-card h3 { font-size: 13px; }
+  .corretor-card { padding: 18px 12px; }
+  .corretor-photo-wrap { max-width: 180px; }
+  .simulador { padding: 22px 14px; }
+  .simulador-result .parcela { font-size: 36px; }
 }
 
 /* REDUZIDO motion */
